@@ -1,0 +1,4379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================================
+                            META
+    =========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+
+    <meta name="theme-color"
+          content="#0B5D3B">
+
+    <meta name="description"
+          content="UniAGORA is the all-in-one campus marketplace connecting students with shopping, food delivery, campus riders and student businesses. Join the waitlist today.">
+
+    <meta name="keywords"
+          content="UniAGORA, Student Marketplace, Campus Marketplace, Food Delivery, Campus Riders, Student Businesses">
+
+    <meta name="author"
+          content="UniAGORA">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="UniAGORA | Everything Your Campus Needs">
+
+    <meta property="og:description"
+          content="The complete campus marketplace built for students. Buy, sell, order food, request riders and discover businesses.">
+
+    <meta property="og:image"
+          content="assets/images/preview.jpg">
+
+    <meta property="og:url"
+          content="https://uniagora.com">
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <title>
+        UniAGORA — Everything Your Campus Needs. One Marketplace.
+    </title>
+
+    <!-- ==========================================================
+                            FAVICON
+    =========================================================== -->
+
+    <link rel="icon"
+          type="image/png"
+          href="assets/images/logo/logo.png">
+
+    <!-- ==========================================================
+                            GOOGLE FONTS
+    =========================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- ==========================================================
+                            BOOTSTRAP
+    =========================================================== -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- ==========================================================
+                            BOOTSTRAP ICONS
+    =========================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- ==========================================================
+                            AOS
+    =========================================================== -->
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+          rel="stylesheet">
+
+    <!-- ==========================================================
+                            SWIPER
+        (Keeping for future expansion)
+    =========================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- ==========================================================
+                            CUSTOM CSS
+    =========================================================== -->
+
+    <style>
+
+        /*=========================================================
+                    DESIGN SYSTEM
+        =========================================================*/
+
+        :root{
+
+            /* Brand */
+
+            --primary:#0B5D3B;
+            --primary-dark:#08452C;
+            --primary-light:#EAF7F1;
+
+            --secondary:#F59E0B;
+            --secondary-dark:#D97706;
+            --secondary-light:#FEF3C7;
+
+            /* Neutral */
+
+            --white:#FFFFFF;
+            --surface:#FFFFFF;
+            --background:#F8FAFC;
+
+            --text:#0F172A;
+            --text-light:#64748B;
+
+            --border:#E2E8F0;
+
+            --success:#22C55E;
+            --danger:#EF4444;
+
+            /* Radius */
+
+            --radius-xs:10px;
+            --radius-sm:14px;
+            --radius-md:22px;
+            --radius-lg:30px;
+            --radius-xl:40px;
+
+            /* Shadows */
+
+            --shadow-xs:
+            0 2px 8px rgba(15,23,42,.04);
+
+            --shadow-sm:
+            0 10px 25px rgba(15,23,42,.06);
+
+            --shadow:
+            0 18px 45px rgba(15,23,42,.08);
+
+            --shadow-lg:
+            0 35px 90px rgba(15,23,42,.12);
+
+            /* Transition */
+
+            --transition:.35s cubic-bezier(.4,0,.2,1);
+
+        }
+
+
+
+        /*=========================================================
+                        RESET
+        =========================================================*/
+
+        *{
+
+            margin:0;
+
+            padding:0;
+
+            box-sizing:border-box;
+
+        }
+
+        *::before,
+        *::after{
+
+            box-sizing:border-box;
+
+        }
+
+        html{
+
+            scroll-behavior:smooth;
+
+        }
+
+        body{
+
+            font-family:'Inter',sans-serif;
+
+            background:var(--background);
+
+            color:var(--text);
+
+            overflow-x:hidden;
+
+            text-rendering:optimizeLegibility;
+
+            -webkit-font-smoothing:antialiased;
+
+            line-height:1.7;
+
+        }
+
+        img{
+
+            display:block;
+
+            max-width:100%;
+
+        }
+
+        a{
+
+            text-decoration:none;
+
+            transition:var(--transition);
+
+        }
+
+        button{
+
+            border:none;
+
+            outline:none;
+
+            transition:var(--transition);
+
+        }
+
+        input{
+
+            outline:none;
+
+            font-family:inherit;
+
+        }
+
+        ul{
+
+            list-style:none;
+
+            margin:0;
+
+            padding:0;
+
+        }
+
+        section{
+
+            position:relative;
+
+            padding:110px 0;
+
+        }
+
+        .container{
+
+            max-width:1240px;
+
+        }
+
+
+
+        /*=========================================================
+                    CUSTOM SCROLLBAR
+        =========================================================*/
+
+        ::-webkit-scrollbar{
+
+            width:10px;
+
+        }
+
+        ::-webkit-scrollbar-track{
+
+            background:#EEF2F7;
+
+        }
+
+        ::-webkit-scrollbar-thumb{
+
+            background:linear-gradient(
+            var(--primary),
+            var(--secondary));
+
+            border-radius:20px;
+
+        }
+
+        ::selection{
+
+            background:var(--primary);
+
+            color:#fff;
+
+        }
+
+
+
+        /*=========================================================
+                    TYPOGRAPHY
+        =========================================================*/
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5{
+
+            font-family:
+
+            "Plus Jakarta Sans",
+
+            sans-serif;
+
+            color:var(--text);
+
+            line-height:1.1;
+
+            font-weight:800;
+
+            letter-spacing:-.03em;
+
+        }
+
+        h1{
+
+            font-size:
+
+            clamp(2.8rem,5vw,4.8rem);
+
+        }
+
+        h2{
+
+            font-size:
+
+            clamp(2rem,4vw,3.3rem);
+
+        }
+
+        h3{
+
+            font-size:1.7rem;
+
+        }
+
+        p{
+
+            font-size:1.05rem;
+
+            color:var(--text-light);
+
+        }
+
+        .section-title{
+
+            margin-bottom:18px;
+
+        }
+
+        .section-subtitle{
+
+            max-width:650px;
+
+            margin:auto;
+
+            color:var(--text-light);
+
+        }
+
+        .text-gradient{
+
+            background:
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary));
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+        }
+
+
+
+        /*=========================================================
+                    GLOBAL UTILITIES
+        =========================================================*/
+
+        .glass{
+
+            background:
+
+            rgba(255,255,255,.75);
+
+            backdrop-filter:
+
+            blur(18px);
+
+            border:
+
+            1px solid rgba(255,255,255,.45);
+
+        }
+
+        .section-tag{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            gap:8px;
+
+            padding:9px 18px;
+
+            background:#ECFDF5;
+
+            color:var(--primary);
+
+            border-radius:999px;
+
+            font-size:.9rem;
+
+            font-weight:700;
+
+            margin-bottom:24px;
+
+        }
+
+        .shadow-hover{
+
+            transition:var(--transition);
+
+        }
+
+        .shadow-hover:hover{
+
+            transform:translateY(-8px);
+
+            box-shadow:var(--shadow-lg);
+
+        }
+
+        .rounded-xl{
+
+            border-radius:var(--radius-xl);
+
+        }
+
+        .rounded-lg{
+
+            border-radius:var(--radius-lg);
+
+        }
+
+        .rounded-md{
+
+            border-radius:var(--radius-md);
+
+        }
+
+        .rounded-sm{
+
+            border-radius:var(--radius-sm);
+
+        }
+
+        /*=========================================================
+                        NAVBAR
+        =========================================================*/
+
+        .navbar{
+
+            position:fixed;
+
+            top:0;
+
+            left:0;
+
+            width:100%;
+
+            z-index:1000;
+
+            padding:18px 0;
+
+            background:rgba(255,255,255,.78);
+
+            backdrop-filter:blur(18px);
+
+            -webkit-backdrop-filter:blur(18px);
+
+            border-bottom:1px solid rgba(15,23,42,.05);
+
+            transition:all .35s ease;
+
+        }
+
+        .navbar.scrolled{
+
+            padding:12px 0;
+
+            background:rgba(255,255,255,.92);
+
+            box-shadow:
+            0 12px 35px rgba(15,23,42,.08);
+
+        }
+
+        .navbar .container{
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+        }
+
+        .navbar-brand{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:12px;
+
+            font-family:
+
+            "Plus Jakarta Sans",
+
+            sans-serif;
+
+            font-size:1.45rem;
+
+            font-weight:800;
+
+            color:var(--text);
+
+        }
+
+        .navbar-brand:hover{
+
+            color:var(--text);
+
+        }
+
+        .navbar-brand img{
+
+            width:auto;
+
+            height:46px;
+
+            transition:var(--transition);
+
+        }
+
+        .navbar-brand:hover img{
+
+            transform:rotate(-4deg) scale(1.04);
+
+        }
+
+        .logo-text{
+
+            font-size:1.45rem;
+
+            font-weight:900;
+
+            letter-spacing:-.03em;
+
+            color:var(--text);
+
+        }
+
+        .logo-text span{
+
+            background:
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary));
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+        }
+
+        .navbar-nav{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:30px;
+
+        }
+
+        .nav-link{
+
+            position:relative;
+
+            color:var(--text);
+
+            font-weight:600;
+
+            font-size:.96rem;
+
+            transition:var(--transition);
+
+        }
+
+        .nav-link:hover{
+
+            color:var(--primary);
+
+        }
+
+        .nav-link::after{
+
+            content:"";
+
+            position:absolute;
+
+            left:50%;
+
+            bottom:-8px;
+
+            transform:translateX(-50%);
+
+            width:0;
+
+            height:2px;
+
+            background:var(--primary);
+
+            border-radius:20px;
+
+            transition:.3s;
+
+        }
+
+        .nav-link:hover::after{
+
+            width:100%;
+
+        }
+
+        .navbar-actions{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:14px;
+
+        }
+
+        .btn-whatsapp{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            gap:10px;
+
+            background:#25D366;
+
+            color:#fff;
+
+            padding:14px 28px;
+
+            border-radius:999px;
+
+            font-weight:700;
+
+            font-size:.95rem;
+
+            box-shadow:
+            0 12px 30px rgba(37,211,102,.25);
+
+            transition:var(--transition);
+
+        }
+
+        .btn-whatsapp:hover{
+
+            color:#fff;
+
+            background:#1BA94C;
+
+            transform:translateY(-4px);
+
+            box-shadow:
+            0 18px 40px rgba(37,211,102,.35);
+
+        }
+
+        .btn-whatsapp i{
+
+            font-size:1.05rem;
+
+        }
+
+        .navbar-toggler{
+
+            border:none;
+
+            padding:0;
+
+            box-shadow:none!important;
+
+        }
+
+        .navbar-toggler-icon{
+
+            width:2rem;
+
+            height:2rem;
+
+        }
+
+        @media(max-width:991px){
+
+            .navbar{
+
+                padding:14px 0;
+
+            }
+
+            .navbar-collapse{
+
+                margin-top:20px;
+
+                padding:25px;
+
+                border-radius:22px;
+
+                background:#fff;
+
+                box-shadow:
+                0 20px 50px rgba(15,23,42,.08);
+
+            }
+
+            .navbar-nav{
+
+                gap:18px;
+
+                margin-bottom:25px;
+
+            }
+
+            .navbar-actions{
+
+                width:100%;
+
+            }
+
+            .btn-whatsapp{
+
+                width:100%;
+
+                justify-content:center;
+
+            }
+
+        }
+
+            /*=========================================================
+                        HERO SECTION
+        =========================================================*/
+
+        .hero{
+
+            position:relative;
+
+            overflow:hidden;
+
+            padding-top:170px;
+
+            padding-bottom:120px;
+
+            background:
+            radial-gradient(circle at top left,
+            rgba(11,93,59,.08),
+            transparent 40%),
+
+            radial-gradient(circle at bottom right,
+            rgba(245,158,11,.08),
+            transparent 35%),
+
+            linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #F8FAFC 100%);
+
+        }
+
+        .hero::before{
+
+            content:"";
+
+            position:absolute;
+
+            width:520px;
+
+            height:520px;
+
+            background:
+
+            rgba(11,93,59,.05);
+
+            border-radius:50%;
+
+            top:-220px;
+
+            right:-180px;
+
+            filter:blur(20px);
+
+        }
+
+        .hero::after{
+
+            content:"";
+
+            position:absolute;
+
+            width:320px;
+
+            height:320px;
+
+            border-radius:50%;
+
+            background:
+
+            rgba(245,158,11,.08);
+
+            bottom:-120px;
+
+            left:-80px;
+
+            filter:blur(15px);
+
+        }
+
+        .hero-content{
+
+            position:relative;
+
+            z-index:2;
+
+        }
+
+        .hero-badge{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            gap:10px;
+
+            padding:10px 22px;
+
+            border-radius:999px;
+
+            background:#ECFDF5;
+
+            color:var(--primary);
+
+            font-size:.9rem;
+
+            font-weight:700;
+
+            margin-bottom:24px;
+
+            box-shadow:var(--shadow-xs);
+
+        }
+
+        .hero-badge i{
+
+            color:var(--secondary);
+
+            font-size:1rem;
+
+        }
+
+        .hero-title{
+
+            max-width:680px;
+
+            margin-bottom:24px;
+
+            font-size:clamp(2.8rem,5vw,5rem);
+
+            line-height:1.05;
+
+            letter-spacing:-.04em;
+
+        }
+
+        .hero-title span{
+
+            background:
+
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary));
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+        }
+
+        .hero-subtitle{
+
+            max-width:560px;
+
+            font-size:1.12rem;
+
+            color:var(--text-light);
+
+            line-height:1.9;
+
+            margin-bottom:35px;
+
+        }
+
+        .hero-stats{
+
+            display:flex;
+
+            gap:35px;
+
+            margin-top:45px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .hero-stat h3{
+
+            font-size:2rem;
+
+            font-weight:800;
+
+            color:var(--primary);
+
+            margin-bottom:2px;
+
+        }
+
+        .hero-stat p{
+
+            margin:0;
+
+            font-size:.9rem;
+
+        }
+
+
+
+        /*=========================================================
+                    WAITLIST FORM
+        =========================================================*/
+
+        .waitlist-card{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:10px;
+
+            background:#fff;
+
+            padding:8px;
+
+            border-radius:22px;
+
+            max-width:580px;
+
+            border:1px solid var(--border);
+
+            box-shadow:var(--shadow);
+
+            transition:var(--transition);
+
+        }
+
+        .waitlist-card:focus-within{
+
+            transform:translateY(-3px);
+
+            box-shadow:var(--shadow-lg);
+
+            border-color:rgba(11,93,59,.18);
+
+        }
+
+        .waitlist-card input{
+
+            flex:1;
+
+            border:none;
+
+            background:transparent;
+
+            padding:18px 18px;
+
+            font-size:1rem;
+
+            color:var(--text);
+
+        }
+
+        .waitlist-card input::placeholder{
+
+            color:#94A3B8;
+
+        }
+
+        .btn-waitlist{
+
+            background:
+
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark));
+
+            color:#fff;
+
+            padding:16px 30px;
+
+            border-radius:16px;
+
+            font-weight:700;
+
+            white-space:nowrap;
+
+            transition:var(--transition);
+
+        }
+
+        .btn-waitlist:hover{
+
+            color:#fff;
+
+            transform:translateY(-3px);
+
+            box-shadow:
+
+            0 20px 35px rgba(11,93,59,.25);
+
+        }
+
+        #waitlistMsg{
+
+            margin-top:16px;
+
+            font-weight:600;
+
+            color:var(--success);
+
+        }
+
+
+
+        /*=========================================================
+                    HERO BUTTONS
+        =========================================================*/
+
+        .hero-buttons{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:18px;
+
+            flex-wrap:wrap;
+
+            margin-top:28px;
+
+        }
+
+        .btn-outline{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            gap:10px;
+
+            padding:15px 28px;
+
+            border:2px solid var(--primary);
+
+            color:var(--primary);
+
+            border-radius:16px;
+
+            font-weight:700;
+
+            transition:var(--transition);
+
+        }
+
+        .btn-outline:hover{
+
+            background:var(--primary);
+
+            color:#fff;
+
+        }
+
+
+
+        /*=========================================================
+                    RESPONSIVE HERO
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            .hero{
+
+                padding-top:140px;
+
+                text-align:center;
+
+            }
+
+            .hero-title{
+
+                margin-left:auto;
+
+                margin-right:auto;
+
+            }
+
+            .hero-subtitle{
+
+                margin-left:auto;
+
+                margin-right:auto;
+
+            }
+
+            .waitlist-card{
+
+                max-width:100%;
+
+            }
+
+            .hero-buttons{
+
+                justify-content:center;
+
+            }
+
+            .hero-stats{
+
+                justify-content:center;
+
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .hero{
+
+                padding-top:125px;
+
+                padding-bottom:90px;
+
+            }
+
+            .hero-title{
+
+                font-size:2.6rem;
+
+            }
+
+            .waitlist-card{
+
+                flex-direction:column;
+
+                padding:12px;
+
+            }
+
+            .waitlist-card input{
+
+                width:100%;
+
+                padding:16px;
+
+            }
+
+            .btn-waitlist{
+
+                width:100%;
+
+            }
+
+        }
+
+        /*=========================================================
+                    HERO CAROUSEL
+        =========================================================*/
+
+        .hero-slider{
+
+            position:relative;
+
+            z-index:2;
+
+        }
+
+        .hero-slider-wrapper{
+
+            position:relative;
+
+            overflow:hidden;
+
+            border-radius:32px;
+
+            background:#fff;
+
+            border:1px solid rgba(15,23,42,.06);
+
+            box-shadow:
+            0 25px 80px rgba(15,23,42,.10),
+            0 8px 24px rgba(15,23,42,.05);
+
+            transition:var(--transition);
+
+        }
+
+        .hero-slider-wrapper:hover{
+
+            transform:translateY(-6px);
+
+            box-shadow:
+            0 40px 90px rgba(15,23,42,.15);
+
+        }
+
+        .carousel{
+
+            border-radius:32px;
+
+            overflow:hidden;
+
+        }
+
+        .carousel-inner{
+
+            border-radius:32px;
+
+        }
+
+        .carousel-item{
+
+            position:relative;
+
+            overflow:hidden;
+
+        }
+
+        .carousel-item::before{
+
+            content:"";
+
+            position:absolute;
+
+            inset:0;
+
+            background:
+
+            linear-gradient(
+            to top,
+            rgba(15,23,42,.10),
+            rgba(15,23,42,0));
+
+            z-index:1;
+
+            pointer-events:none;
+
+        }
+
+        .carousel-item img{
+
+            width:100%;
+
+            height:580px;
+
+            object-fit:cover;
+
+            object-position:center;
+
+            transition:
+            transform 8s ease,
+            filter .5s ease;
+
+        }
+
+        .carousel-item.active img{
+
+            transform:scale(1.08);
+
+        }
+
+        .carousel-item:hover img{
+
+            filter:brightness(1.02);
+
+        }
+
+
+
+        /*=========================================================
+                    CAROUSEL CONTROLS
+        =========================================================*/
+
+        .carousel-control-prev,
+        .carousel-control-next{
+
+            width:56px;
+
+            height:56px;
+
+            top:50%;
+
+            transform:translateY(-50%);
+
+            opacity:1;
+
+            background:
+
+            rgba(255,255,255,.16);
+
+            backdrop-filter:blur(18px);
+
+            border:1px solid rgba(255,255,255,.25);
+
+            border-radius:50%;
+
+            transition:var(--transition);
+
+        }
+
+        .carousel-control-prev{
+
+            left:20px;
+
+        }
+
+        .carousel-control-next{
+
+            right:20px;
+
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover{
+
+            background:#fff;
+
+            transform:
+            translateY(-50%)
+            scale(1.08);
+
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon{
+
+            filter:invert(1);
+
+            width:1.2rem;
+
+            height:1.2rem;
+
+        }
+
+        .carousel-control-prev:hover
+        .carousel-control-prev-icon,
+
+        .carousel-control-next:hover
+        .carousel-control-next-icon{
+
+            filter:none;
+
+        }
+
+
+
+        /*=========================================================
+                    CAROUSEL INDICATORS
+        =========================================================*/
+
+        .carousel-indicators{
+
+            bottom:22px;
+
+            margin-bottom:0;
+
+            gap:10px;
+
+        }
+
+        .carousel-indicators [data-bs-target]{
+
+            width:12px;
+
+            height:12px;
+
+            margin:0;
+
+            border:none;
+
+            border-radius:50%;
+
+            background:#fff;
+
+            opacity:.45;
+
+            transition:all .35s ease;
+
+        }
+
+        .carousel-indicators .active{
+
+            width:42px;
+
+            border-radius:100px;
+
+            background:var(--secondary);
+
+            opacity:1;
+
+        }
+
+
+
+        /*=========================================================
+                    FLOATING CARD
+        =========================================================*/
+
+        .hero-floating-card{
+
+            position:absolute;
+
+            left:-35px;
+
+            bottom:35px;
+
+            background:#fff;
+
+            border-radius:18px;
+
+            padding:16px 20px;
+
+            box-shadow:var(--shadow);
+
+            display:flex;
+
+            align-items:center;
+
+            gap:14px;
+
+            z-index:5;
+
+            animation:floatCard 4s ease-in-out infinite;
+
+        }
+
+        .hero-floating-card i{
+
+            width:52px;
+
+            height:52px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            border-radius:16px;
+
+            background:var(--primary-light);
+
+            color:var(--primary);
+
+            font-size:1.3rem;
+
+        }
+
+        .hero-floating-card h6{
+
+            margin:0;
+
+            font-size:1rem;
+
+            font-weight:800;
+
+        }
+
+        .hero-floating-card p{
+
+            margin:0;
+
+            font-size:.84rem;
+
+            color:var(--text-light);
+
+        }
+
+
+
+        /*=========================================================
+                    FLOAT ANIMATION
+        =========================================================*/
+
+        @keyframes floatCard{
+
+            0%{
+
+                transform:translateY(0);
+
+            }
+
+            50%{
+
+                transform:translateY(-10px);
+
+            }
+
+            100%{
+
+                transform:translateY(0);
+
+            }
+
+        }
+
+
+
+        /*=========================================================
+                    HERO RESPONSIVE
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            .hero-slider{
+
+                margin-top:55px;
+
+            }
+
+            .carousel-item img{
+
+                height:470px;
+
+            }
+
+            .hero-floating-card{
+
+                left:20px;
+
+                bottom:20px;
+
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .hero-slider-wrapper{
+
+                border-radius:24px;
+
+            }
+
+            .carousel{
+
+                border-radius:24px;
+
+            }
+
+            .carousel-item img{
+
+                height:320px;
+
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next{
+
+                display:none;
+
+            }
+
+            .hero-floating-card{
+
+                display:none;
+
+            }
+
+        }
+
+            /*=========================================================
+                    FEATURES / WHAT TO EXPECT
+        =========================================================*/
+
+        .teaser-section{
+
+            position:relative;
+
+            padding:120px 0;
+
+            background:#ffffff;
+
+            overflow:hidden;
+
+        }
+
+        .teaser-section::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:-180px;
+
+            left:-180px;
+
+            width:420px;
+
+            height:420px;
+
+            border-radius:50%;
+
+            background:rgba(11,93,59,.05);
+
+            filter:blur(20px);
+
+        }
+
+        .teaser-section::after{
+
+            content:"";
+
+            position:absolute;
+
+            right:-180px;
+
+            bottom:-180px;
+
+            width:420px;
+
+            height:420px;
+
+            border-radius:50%;
+
+            background:rgba(245,158,11,.05);
+
+            filter:blur(20px);
+
+        }
+
+        .section-header{
+
+            position:relative;
+
+            z-index:2;
+
+            max-width:720px;
+
+            margin:0 auto 70px;
+
+            text-align:center;
+
+        }
+
+        .section-header h2{
+
+            margin-bottom:18px;
+
+        }
+
+        .section-header p{
+
+            font-size:1.05rem;
+
+            line-height:1.8;
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE CARD
+        =========================================================*/
+
+        .teaser-card{
+
+            position:relative;
+
+            z-index:2;
+
+            height:100%;
+
+            background:#fff;
+
+            border-radius:28px;
+
+            padding:38px 30px;
+
+            border:1px solid rgba(15,23,42,.06);
+
+            box-shadow:
+
+            0 10px 25px rgba(15,23,42,.05);
+
+            transition:all .35s ease;
+
+            overflow:hidden;
+
+        }
+
+        .teaser-card::before{
+
+            content:"";
+
+            position:absolute;
+
+            left:0;
+
+            top:0;
+
+            width:100%;
+
+            height:5px;
+
+            background:
+
+            linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary));
+
+            transform:scaleX(0);
+
+            transform-origin:left;
+
+            transition:.35s;
+
+        }
+
+        .teaser-card:hover{
+
+            transform:
+
+            translateY(-12px);
+
+            box-shadow:
+
+            0 25px 60px rgba(15,23,42,.10);
+
+            border-color:
+
+            rgba(11,93,59,.12);
+
+        }
+
+        .teaser-card:hover::before{
+
+            transform:scaleX(1);
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE ICON
+        =========================================================*/
+
+        .teaser-icon{
+
+            width:74px;
+
+            height:74px;
+
+            border-radius:22px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            background:
+
+            linear-gradient(
+            135deg,
+            var(--primary-light),
+            #F4FBF8);
+
+            color:var(--primary);
+
+            font-size:2rem;
+
+            margin-bottom:28px;
+
+            transition:all .35s ease;
+
+        }
+
+        .teaser-card:hover .teaser-icon{
+
+            transform:
+
+            rotate(-8deg)
+            scale(1.08);
+
+            background:
+
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary));
+
+            color:#fff;
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE TEXT
+        =========================================================*/
+
+        .teaser-card h5{
+
+            font-family:
+
+            "Plus Jakarta Sans",
+
+            sans-serif;
+
+            font-size:1.35rem;
+
+            font-weight:800;
+
+            margin-bottom:15px;
+
+            color:var(--text);
+
+        }
+
+        .teaser-card p{
+
+            margin:0;
+
+            font-size:.98rem;
+
+            line-height:1.8;
+
+            color:var(--text-light);
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE BADGE
+        =========================================================*/
+
+        .feature-tag{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            gap:8px;
+
+            padding:7px 14px;
+
+            border-radius:999px;
+
+            background:rgba(11,93,59,.08);
+
+            color:var(--primary);
+
+            font-size:.78rem;
+
+            font-weight:700;
+
+            margin-bottom:18px;
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE GRID
+        =========================================================*/
+
+        .teaser-section .row{
+
+            row-gap:30px;
+
+        }
+
+
+
+        /*=========================================================
+                    FEATURE RESPONSIVE
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            .teaser-section{
+
+                padding:90px 0;
+
+            }
+
+            .section-header{
+
+                margin-bottom:50px;
+
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .teaser-card{
+
+                padding:30px 24px;
+
+                border-radius:22px;
+
+            }
+
+            .teaser-icon{
+
+                width:64px;
+
+                height:64px;
+
+                font-size:1.7rem;
+
+                border-radius:18px;
+
+            }
+
+            .teaser-card h5{
+
+                font-size:1.2rem;
+
+            }
+
+        }
+
+            /*=========================================================
+                    COUNTDOWN SECTION
+        =========================================================*/
+
+        .countdown-section{
+
+            position:relative;
+
+            overflow:hidden;
+
+            padding:120px 0;
+
+            background:
+            linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark));
+
+            color:#fff;
+
+        }
+
+        .countdown-section::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:-220px;
+
+            right:-220px;
+
+            width:520px;
+
+            height:520px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.05);
+
+            filter:blur(10px);
+
+        }
+
+        .countdown-section::after{
+
+            content:"";
+
+            position:absolute;
+
+            bottom:-180px;
+
+            left:-180px;
+
+            width:420px;
+
+            height:420px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.04);
+
+        }
+
+        .countdown-container{
+
+            position:relative;
+
+            z-index:2;
+
+        }
+
+        .countdown-section h2{
+
+            color:#fff;
+
+            margin-bottom:18px;
+
+        }
+
+        .countdown-section p{
+
+            color:rgba(255,255,255,.82);
+
+            max-width:650px;
+
+            margin:0 auto;
+
+        }
+
+
+
+        /*=========================================================
+                    COUNTDOWN GRID
+        =========================================================*/
+
+        .countdown-grid{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(4,1fr);
+
+            gap:24px;
+
+            margin-top:65px;
+
+        }
+
+
+
+        /*=========================================================
+                    COUNTDOWN CARD
+        =========================================================*/
+
+        .countdown-box{
+
+            position:relative;
+
+            overflow:hidden;
+
+            background:
+
+            rgba(255,255,255,.12);
+
+            backdrop-filter:
+
+            blur(18px);
+
+            border:
+
+            1px solid rgba(255,255,255,.15);
+
+            border-radius:28px;
+
+            padding:38px 20px;
+
+            text-align:center;
+
+            transition:all .35s ease;
+
+        }
+
+        .countdown-box::before{
+
+            content:"";
+
+            position:absolute;
+
+            inset:0;
+
+            background:
+
+            linear-gradient(
+
+            rgba(255,255,255,.10),
+
+            transparent);
+
+            opacity:0;
+
+            transition:.35s;
+
+        }
+
+        .countdown-box:hover{
+
+            transform:
+
+            translateY(-10px);
+
+            background:
+
+            rgba(255,255,255,.18);
+
+        }
+
+        .countdown-box:hover::before{
+
+            opacity:1;
+
+        }
+
+
+
+        /*=========================================================
+                    COUNTDOWN NUMBER
+        =========================================================*/
+
+        .countdown-box h3{
+
+            font-family:
+
+            "Plus Jakarta Sans",
+
+            sans-serif;
+
+            font-size:3.5rem;
+
+            font-weight:900;
+
+            line-height:1;
+
+            color:#fff;
+
+            margin-bottom:12px;
+
+            letter-spacing:-2px;
+
+        }
+
+        .countdown-box span{
+
+            display:block;
+
+            text-transform:uppercase;
+
+            letter-spacing:2px;
+
+            font-size:.82rem;
+
+            font-weight:700;
+
+            color:
+
+            rgba(255,255,255,.75);
+
+        }
+
+
+
+        /*=========================================================
+                    COUNTDOWN ICON
+        =========================================================*/
+
+        .countdown-icon{
+
+            width:58px;
+
+            height:58px;
+
+            margin:0 auto 22px;
+
+            border-radius:18px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            background:
+
+            rgba(255,255,255,.15);
+
+            color:#fff;
+
+            font-size:1.45rem;
+
+        }
+
+
+
+        /*=========================================================
+                    COUNTDOWN RESPONSIVE
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            .countdown-grid{
+
+                grid-template-columns:
+                repeat(2,1fr);
+
+            }
+
+        }
+
+        @media(max-width:576px){
+
+            .countdown-section{
+
+                padding:90px 0;
+
+            }
+
+            .countdown-grid{
+
+                grid-template-columns:1fr;
+
+                gap:18px;
+
+            }
+
+            .countdown-box{
+
+                padding:28px;
+
+            }
+
+            .countdown-box h3{
+
+                font-size:2.7rem;
+
+            }
+
+        }
+
+        /*=========================================================
+                    COMMUNITY SECTION
+        =========================================================*/
+
+        .community-section{
+
+            position:relative;
+
+            padding:120px 0;
+
+            background:
+            linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #F8FAFC 100%);
+
+            overflow:hidden;
+
+        }
+
+        .community-section::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:-160px;
+
+            left:-160px;
+
+            width:380px;
+
+            height:380px;
+
+            border-radius:50%;
+
+            background:
+            rgba(11,93,59,.05);
+
+            filter:blur(25px);
+
+        }
+
+        .community-section::after{
+
+            content:"";
+
+            position:absolute;
+
+            right:-120px;
+
+            bottom:-120px;
+
+            width:300px;
+
+            height:300px;
+
+            border-radius:50%;
+
+            background:
+            rgba(245,158,11,.08);
+
+            filter:blur(18px);
+
+        }
+
+
+
+        /*=========================================================
+                    COMMUNITY CARD
+        =========================================================*/
+
+        .community-card{
+
+            position:relative;
+
+            z-index:2;
+
+            background:#fff;
+
+            border-radius:36px;
+
+            padding:70px 60px;
+
+            max-width:900px;
+
+            margin:auto;
+
+            text-align:center;
+
+            border:1px solid rgba(15,23,42,.06);
+
+            box-shadow:
+            0 25px 70px rgba(15,23,42,.08);
+
+            overflow:hidden;
+
+        }
+
+        .community-card::before{
+
+            content:"";
+
+            position:absolute;
+
+            inset:0;
+
+            background:
+
+            radial-gradient(
+            circle at top right,
+            rgba(245,158,11,.05),
+            transparent 35%),
+
+            radial-gradient(
+            circle at bottom left,
+            rgba(11,93,59,.05),
+            transparent 40%);
+
+            pointer-events:none;
+
+        }
+
+        .community-card>*{
+
+            position:relative;
+
+            z-index:2;
+
+        }
+
+
+
+        /*=========================================================
+                    COMMUNITY TITLE
+        =========================================================*/
+
+        .community-card h2{
+
+            margin-bottom:18px;
+
+        }
+
+        .community-card p{
+
+            max-width:620px;
+
+            margin:0 auto 35px;
+
+            font-size:1.05rem;
+
+            line-height:1.9;
+
+        }
+
+
+
+        /*=========================================================
+                    PRIMARY CTA
+        =========================================================*/
+
+        .btn-community{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            gap:12px;
+
+            background:#25D366;
+
+            color:#fff;
+
+            padding:18px 38px;
+
+            border-radius:18px;
+
+            font-weight:700;
+
+            font-size:1rem;
+
+            transition:var(--transition);
+
+            box-shadow:
+
+            0 20px 40px rgba(37,211,102,.25);
+
+        }
+
+        .btn-community:hover{
+
+            color:#fff;
+
+            transform:
+
+            translateY(-5px);
+
+            background:#1AA94C;
+
+            box-shadow:
+
+            0 28px 50px rgba(37,211,102,.35);
+
+        }
+
+
+
+        /*=========================================================
+                    SOCIAL ICONS
+        =========================================================*/
+
+        .social-links{
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            gap:18px;
+
+            flex-wrap:wrap;
+
+            margin-top:40px;
+
+        }
+
+        .social-link{
+
+            width:64px;
+
+            height:64px;
+
+            border-radius:20px;
+
+            background:#fff;
+
+            color:var(--text);
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            font-size:1.5rem;
+
+            border:1px solid rgba(15,23,42,.08);
+
+            box-shadow:
+
+            0 10px 25px rgba(15,23,42,.05);
+
+            transition:all .35s ease;
+
+        }
+
+        .social-link:hover{
+
+            transform:
+
+            translateY(-8px);
+
+        }
+
+        .social-link.linkedin:hover{
+
+            background:#0A66C2;
+
+            color:#fff;
+
+            border-color:#0A66C2;
+
+        }
+
+        .social-link.instagram:hover{
+
+            background:#E4405F;
+
+            color:#fff;
+
+            border-color:#E4405F;
+
+        }
+
+        .social-link.whatsapp:hover{
+
+            background:#25D366;
+
+            color:#fff;
+
+            border-color:#25D366;
+
+        }
+
+
+
+        /*=========================================================
+                    MINI STATS
+        =========================================================*/
+
+        .community-stats{
+
+            display:flex;
+
+            justify-content:center;
+
+            gap:50px;
+
+            margin-top:45px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .community-stat{
+
+            text-align:center;
+
+        }
+
+        .community-stat h3{
+
+            color:var(--primary);
+
+            font-size:2rem;
+
+            font-weight:800;
+
+            margin-bottom:4px;
+
+        }
+
+        .community-stat span{
+
+            color:var(--text-light);
+
+            font-size:.9rem;
+
+        }
+
+
+
+        /*=========================================================
+                    COMMUNITY RESPONSIVE
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            .community-card{
+
+                padding:55px 35px;
+
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .community-section{
+
+                padding:90px 0;
+
+            }
+
+            .community-card{
+
+                border-radius:26px;
+
+                padding:40px 24px;
+
+            }
+
+            .btn-community{
+
+                width:100%;
+
+                padding:16px;
+
+            }
+
+            .social-links{
+
+                gap:14px;
+
+            }
+
+            .social-link{
+
+                width:56px;
+
+                height:56px;
+
+                border-radius:16px;
+
+                font-size:1.3rem;
+
+            }
+
+            .community-stats{
+
+                gap:25px;
+
+            }
+
+        }
+
+        /*=========================================================
+                        FOOTER
+        =========================================================*/
+
+        .footer{
+
+            position:relative;
+
+            background:
+            linear-gradient(
+            180deg,
+            #082A1F 0%,
+            #061D16 100%);
+
+            color:rgba(255,255,255,.75);
+
+            padding:90px 0 35px;
+
+            overflow:hidden;
+
+        }
+
+        .footer::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:-180px;
+
+            right:-180px;
+
+            width:420px;
+
+            height:420px;
+
+            border-radius:50%;
+
+            background:
+
+            rgba(255,255,255,.04);
+
+        }
+
+        .footer .container{
+
+            position:relative;
+
+            z-index:2;
+
+        }
+
+        .footer-logo{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:14px;
+
+            margin-bottom:22px;
+
+        }
+
+        .footer-logo img{
+
+            height:52px;
+
+            width:auto;
+
+        }
+
+        .footer-logo h4{
+
+            margin:0;
+
+            color:#fff;
+
+            font-size:1.55rem;
+
+        }
+
+        .footer-logo span{
+
+            background:
+            linear-gradient(
+            135deg,
+            var(--secondary),
+            #FFD166);
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+        }
+
+        .footer-description{
+
+            max-width:430px;
+
+            line-height:1.9;
+
+            color:rgba(255,255,255,.70);
+
+        }
+
+        .footer-title{
+
+            color:#fff;
+
+            font-size:1.05rem;
+
+            font-weight:700;
+
+            margin-bottom:20px;
+
+        }
+
+        .footer-links{
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:14px;
+
+        }
+
+        .footer-links a{
+
+            color:rgba(255,255,255,.70);
+
+            transition:var(--transition);
+
+        }
+
+        .footer-links a:hover{
+
+            color:#fff;
+
+            transform:translateX(6px);
+
+        }
+
+        .footer-divider{
+
+            width:100%;
+
+            height:1px;
+
+            background:
+
+            rgba(255,255,255,.08);
+
+            margin:55px 0 30px;
+
+        }
+
+        .footer-bottom{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            flex-wrap:wrap;
+
+            gap:20px;
+
+        }
+
+        .footer-bottom p{
+
+            margin:0;
+
+            color:rgba(255,255,255,.65);
+
+            font-size:.92rem;
+
+        }
+
+        .footer-bottom-links{
+
+            display:flex;
+
+            gap:22px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .footer-bottom-links a{
+
+            color:rgba(255,255,255,.65);
+
+            font-size:.9rem;
+
+        }
+
+        .footer-bottom-links a:hover{
+
+            color:#fff;
+
+        }
+
+
+
+        /*=========================================================
+                        GLOBAL ANIMATIONS
+        =========================================================*/
+
+        @keyframes float{
+
+            0%,100%{
+
+                transform:translateY(0);
+
+            }
+
+            50%{
+
+                transform:translateY(-10px);
+
+            }
+
+        }
+
+        @keyframes pulseGlow{
+
+            0%{
+
+                box-shadow:0 0 0 rgba(11,93,59,0);
+
+            }
+
+            50%{
+
+                box-shadow:0 0 30px rgba(11,93,59,.18);
+
+            }
+
+            100%{
+
+                box-shadow:0 0 0 rgba(11,93,59,0);
+
+            }
+
+        }
+
+        @keyframes fadeUp{
+
+            from{
+
+                opacity:0;
+
+                transform:translateY(35px);
+
+            }
+
+            to{
+
+                opacity:1;
+
+                transform:translateY(0);
+
+            }
+
+        }
+
+        .floating{
+
+            animation:float 5s ease-in-out infinite;
+
+        }
+
+        .pulse{
+
+            animation:pulseGlow 3s infinite;
+
+        }
+
+        .fade-up{
+
+            animation:fadeUp .8s ease both;
+
+        }
+
+
+
+        /*=========================================================
+                        SPACING UTILITIES
+        =========================================================*/
+
+        .py-section{
+
+            padding:120px 0;
+
+        }
+
+        .mt-section{
+
+            margin-top:120px;
+
+        }
+
+        .mb-section{
+
+            margin-bottom:120px;
+
+        }
+
+
+
+        /*=========================================================
+                        GLOBAL RESPONSIVE
+        =========================================================*/
+
+        @media(max-width:991px){
+
+            section{
+
+                padding:90px 0;
+
+            }
+
+            .footer{
+
+                padding-top:70px;
+
+            }
+
+            .footer-bottom{
+
+                text-align:center;
+
+                justify-content:center;
+
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            section{
+
+                padding:80px 0;
+
+            }
+
+            h1{
+
+                font-size:2.5rem;
+
+            }
+
+            h2{
+
+                font-size:2rem;
+
+            }
+
+            .footer-logo{
+
+                justify-content:center;
+
+            }
+
+            .footer-description{
+
+                text-align:center;
+
+                margin:auto;
+
+            }
+
+            .footer-title{
+
+                margin-top:30px;
+
+            }
+
+            .footer-links{
+
+                align-items:center;
+
+            }
+
+        }
+
+        @media(max-width:576px){
+
+            .container{
+
+                padding-left:20px;
+
+                padding-right:20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ==========================================================
+                            NAVBAR
+    =========================================================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+
+        <div class="container">
+
+            <!-- Logo -->
+
+            <a class="navbar-brand" href="#hero">
+
+                <img src="assets/images/logo/logo.png"
+                     alt="UniAGORA Logo">
+
+                <div class="logo-text">
+
+                    Uni<span>AGORA</span>
+
+                </div>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button class="navbar-toggler"
+
+                    type="button"
+
+                    data-bs-toggle="collapse"
+
+                    data-bs-target="#navbarContent"
+
+                    aria-controls="navbarContent"
+
+                    aria-expanded="false"
+
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Navigation -->
+
+            <div class="collapse navbar-collapse"
+
+                 id="navbarContent">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+
+                           href="#hero">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+
+                           href="#features">
+
+                            Features
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+
+                           href="#countdown">
+
+                            Launch
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+
+                           href="#community">
+
+                            Community
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <div class="navbar-actions ms-lg-4">
+
+                    <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                       target="_blank"
+
+                       rel="noopener noreferrer"
+
+                       class="btn-whatsapp">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                        Join WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================================
+                            HERO
+    =========================================================== -->
+
+    <section class="hero"
+
+             id="hero">
+
+        <div class="container">
+
+            <div class="row align-items-center gy-5">
+
+                <!-- =======================================
+                        LEFT CONTENT
+                ======================================== -->
+
+                <div class="col-lg-6 hero-content"
+
+                     data-aos="fade-right">
+
+                    <div class="hero-badge">
+
+                        <i class="bi bi-stars"></i>
+
+                        Nigeria's Next Campus Marketplace
+
+                    </div>
+
+                    <h1 class="hero-title">
+
+                        Everything Your Campus Needs.
+
+                        <span>
+
+                            One Marketplace.
+
+                        </span>
+
+                    </h1>
+
+                    <p class="hero-subtitle">
+
+                        Buy and sell with fellow students,
+
+                        order delicious meals,
+
+                        request trusted campus riders,
+
+                        and discover student businesses—
+
+                        all from one beautiful platform designed
+
+                        exclusively for university life.
+
+                    </p>
+
+                    <!-- ===================================
+                            WAITLIST STARTS HERE
+                    ==================================== -->
+                                        <form onsubmit="handleWaitlist(event)">
+
+                        <div class="waitlist-card">
+
+                            <input
+                                type="email"
+                                id="waitlistEmail"
+                                placeholder="Enter your student email..."
+                                required>
+
+                            <button
+                                type="submit"
+                                class="btn-waitlist">
+
+                                Join Waitlist
+
+                            </button>
+
+                        </div>
+
+                        <div id="waitlistMsg"
+                             style="display:none;">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Awesome! You're officially on the UniAGORA waitlist.
+
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- ===================================
+                            HERO BUTTONS
+                    ==================================== -->
+
+                    <div class="hero-buttons">
+
+                        <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                           target="_blank"
+
+                           rel="noopener noreferrer"
+
+                           class="btn-whatsapp">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            Join WhatsApp
+
+                        </a>
+
+                        <a href="#features"
+
+                           class="btn-outline">
+
+                            <i class="bi bi-arrow-down-circle"></i>
+
+                            Explore Features
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- ===================================
+                            QUICK STATS
+                    ==================================== -->
+
+                    <div class="hero-stats">
+
+                        <div class="hero-stat">
+
+                            <h3>4</h3>
+
+                            <p>Campus Services</p>
+
+                        </div>
+
+                        <div class="hero-stat">
+
+                            <h3>24/7</h3>
+
+                            <p>Marketplace Access</p>
+
+                        </div>
+
+                        <div class="hero-stat">
+
+                            <h3>100%</h3>
+
+                            <p>Built for Students</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =======================================
+                        HERO IMAGE
+                ======================================== -->
+
+                <div class="col-lg-6"
+
+                     data-aos="fade-left">
+
+                    <div class="hero-slider">
+
+                        <div class="hero-slider-wrapper">
+
+                            <div id="heroCarousel"
+
+                                 class="carousel slide carousel-fade"
+
+                                 data-bs-ride="carousel"
+
+                                 data-bs-interval="5000">
+
+                                <div class="carousel-indicators">
+
+                                    <button type="button"
+
+                                            data-bs-target="#heroCarousel"
+
+                                            data-bs-slide-to="0"
+
+                                            class="active"
+
+                                            aria-current="true"
+
+                                            aria-label="Slide 1">
+
+                                    </button>
+
+                                    <button type="button"
+
+                                            data-bs-target="#heroCarousel"
+
+                                            data-bs-slide-to="1"
+
+                                            aria-label="Slide 2">
+
+                                    </button>
+
+                                    <button type="button"
+
+                                            data-bs-target="#heroCarousel"
+
+                                            data-bs-slide-to="2"
+
+                                            aria-label="Slide 3">
+
+                                    </button>
+
+                                    <button type="button"
+
+                                            data-bs-target="#heroCarousel"
+
+                                            data-bs-slide-to="3"
+
+                                            aria-label="Slide 4">
+
+                                    </button>
+
+                                    <button type="button"
+
+                                            data-bs-target="#heroCarousel"
+
+                                            data-bs-slide-to="4"
+
+                                            aria-label="Slide 5">
+
+                                    </button>
+
+                                </div>
+
+                                <div class="carousel-inner">
+                                                                    <!-- Slide 1 -->
+                                    <div class="carousel-item active">
+
+                                        <img src="assets/images/slides/marketplace.png"
+                                             alt="Everything Your Campus Needs">
+
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-item">
+
+                                        <img src="assets/images/slides/food-delivery.png"
+                                             alt="Campus Food Delivery">
+
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-item">
+
+                                        <img src="assets/images/slides/riders.png"
+                                             alt="Campus Riders">
+
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-item">
+
+                                        <img src="assets/images/slides/student-business.png"
+                                             alt="Student Businesses">
+
+                                    </div>
+
+                                    <!-- Slide 5 -->
+                                    <div class="carousel-item">
+
+                                        <img src="assets/images/slides/ecosystem.png"
+                                             alt="UniAGORA Ecosystem">
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Previous -->
+
+                                <button class="carousel-control-prev"
+
+                                        type="button"
+
+                                        data-bs-target="#heroCarousel"
+
+                                        data-bs-slide="prev">
+
+                                    <span class="carousel-control-prev-icon"></span>
+
+                                </button>
+
+                                <!-- Next -->
+
+                                <button class="carousel-control-next"
+
+                                        type="button"
+
+                                        data-bs-target="#heroCarousel"
+
+                                        data-bs-slide="next">
+
+                                    <span class="carousel-control-next-icon"></span>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Floating Card -->
+
+                        <div class="hero-floating-card">
+
+                            <i class="bi bi-patch-check-fill"></i>
+
+                            <div>
+
+                                <h6>Verified Campus Community</h6>
+
+                                <p>Built exclusively for university students.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- ==========================================================
+                            FEATURES
+    =========================================================== -->
+
+    <section class="teaser-section"
+
+             id="features">
+
+        <div class="container">
+
+            <div class="section-header"
+
+                 data-aos="fade-up">
+
+                <div class="section-tag">
+
+                    <i class="bi bi-stars"></i>
+
+                    WHAT YOU'LL GET
+
+                </div>
+
+                <h2 class="section-title">
+
+                    Everything You Need To Thrive
+
+                    <span class="text-gradient">
+
+                        On Campus
+
+                    </span>
+
+                </h2>
+
+                <p class="section-subtitle">
+
+                    UniAGORA brings shopping, food, deliveries and student businesses together into one trusted ecosystem designed exclusively for university life.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="row g-4">
+
+                <!-- ======================================= -->
+
+                <!-- Marketplace -->
+
+                <!-- ======================================= -->
+
+                <div class="col-lg-3 col-md-6"
+
+                     data-aos="fade-up"
+
+                     data-aos-delay="0">
+
+                    <div class="teaser-card shadow-hover">
+
+                        <div class="feature-tag">
+
+                            Buy & Sell
+
+                        </div>
+
+                        <div class="teaser-icon">
+
+                            <i class="bi bi-shop"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Student Marketplace
+
+                        </h5>
+
+                        <p>
+
+                            Buy textbooks, gadgets, fashion, furniture and everyday essentials directly from trusted students around your campus.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ======================================= -->
+
+                <!-- Food -->
+
+                <!-- ======================================= -->
+
+                <div class="col-lg-3 col-md-6"
+
+                     data-aos="fade-up"
+
+                     data-aos-delay="100">
+
+                    <div class="teaser-card shadow-hover">
+
+                        <div class="feature-tag">
+
+                            Fresh Meals
+
+                        </div>
+
+                        <div class="teaser-icon">
+
+                            <i class="bi bi-cup-hot-fill"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Food Delivery
+
+                        </h5>
+
+                        <p>
+
+                            Order delicious meals from campus kitchens and student vendors with fast delivery right to your hostel or lecture hall.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ======================================= -->
+
+                <!-- Riders -->
+
+                <!-- ======================================= -->
+
+                <div class="col-lg-3 col-md-6"
+
+                     data-aos="fade-up"
+
+                     data-aos-delay="200">
+
+                    <div class="teaser-card shadow-hover">
+
+                        <div class="feature-tag">
+
+                            Fast Delivery
+
+                        </div>
+
+                        <div class="teaser-icon">
+
+                            <i class="bi bi-bicycle"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Campus Riders
+
+                        </h5>
+
+                        <p>
+
+                            Need something delivered across campus? Request reliable student riders for quick, affordable and secure deliveries.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ======================================= -->
+
+                <!-- Businesses -->
+
+                <!-- ======================================= -->
+
+                <div class="col-lg-3 col-md-6"
+
+                     data-aos="fade-up"
+
+                     data-aos-delay="300">
+
+                    <div class="teaser-card shadow-hover">
+
+                        <div class="feature-tag">
+
+                            Grow
+
+                        </div>
+
+                        <div class="teaser-icon">
+
+                            <i class="bi bi-briefcase-fill"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Student Businesses
+
+                        </h5>
+
+                        <p>
+
+                            Promote your brand, attract customers, receive orders and grow your student business within your university community.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- ==========================================================
+                            LAUNCH COUNTDOWN
+    =========================================================== -->
+
+    <section class="countdown-section"
+
+             id="countdown">
+
+        <div class="container countdown-container text-center">
+
+            <div data-aos="fade-up">
+
+                <div class="section-tag"
+
+                     style="background:rgba(255,255,255,.15); color:#fff;">
+
+                    <i class="bi bi-rocket-takeoff-fill"></i>
+
+                    COMING SOON
+
+                </div>
+
+                <h2>
+
+                    We're Preparing Something
+
+                    <br>
+
+                    Amazing For Campus.
+
+                </h2>
+
+                <p>
+
+                    UniAGORA is currently in development. Join the waitlist today and be among the first students to experience the future of campus commerce.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Countdown -->
+
+            <div class="countdown-grid"
+
+                 data-aos="fade-up"
+
+                 data-aos-delay="150">
+
+                <div class="countdown-box">
+
+                    <div class="countdown-icon">
+
+                        <i class="bi bi-calendar-event"></i>
+
+                    </div>
+
+                    <h3 id="days">00</h3>
+
+                    <span>Days</span>
+
+                </div>
+
+                <div class="countdown-box">
+
+                    <div class="countdown-icon">
+
+                        <i class="bi bi-clock-history"></i>
+
+                    </div>
+
+                    <h3 id="hours">00</h3>
+
+                    <span>Hours</span>
+
+                </div>
+
+                <div class="countdown-box">
+
+                    <div class="countdown-icon">
+
+                        <i class="bi bi-stopwatch"></i>
+
+                    </div>
+
+                    <h3 id="minutes">00</h3>
+
+                    <span>Minutes</span>
+
+                </div>
+
+                <div class="countdown-box">
+
+                    <div class="countdown-icon">
+
+                        <i class="bi bi-alarm"></i>
+
+                    </div>
+
+                    <h3 id="seconds">00</h3>
+
+                    <span>Seconds</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CTA -->
+
+            <div class="mt-5"
+
+                 data-aos="zoom-in"
+
+                 data-aos-delay="250">
+
+                <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   class="btn-community">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Join The Waitlist Community
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- ==========================================================
+                            COMMUNITY
+    =========================================================== -->
+
+    <section class="community-section"
+
+             id="community">
+
+        <div class="container">
+
+            <div class="community-card"
+
+                 data-aos="zoom-in">
+
+                <div class="section-tag">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    JOIN THE COMMUNITY
+
+                </div>
+
+                <h2>
+
+                    Don't Miss The Launch
+
+                </h2>
+
+                <p>
+
+                    Thousands of students will soon discover a smarter way to shop, sell, order food and request deliveries on campus. Join our community today and receive exclusive updates, announcements and early access before the official launch.
+
+                </p>
+
+                <!-- Primary CTA -->
+
+                <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   class="btn-community">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Join Our WhatsApp Channel
+
+                </a>
+
+                <!-- Community Stats -->
+
+                <div class="community-stats">
+
+                    <div class="community-stat">
+
+                        <h3>4</h3>
+
+                        <span>Core Services</span>
+
+                    </div>
+
+                    <div class="community-stat">
+
+                        <h3>1</h3>
+
+                        <span>Campus Ecosystem</span>
+
+                    </div>
+
+                    <div class="community-stat">
+
+                        <h3>∞</h3>
+
+                        <span>Opportunities</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Social Links -->
+
+                <div class="social-links">
+
+                    <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                       target="_blank"
+
+                       class="social-link whatsapp"
+
+                       aria-label="WhatsApp">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/uniagorashop/about/?viewAsMember=true"
+
+                       target="_blank"
+
+                       class="social-link linkedin"
+
+                       aria-label="LinkedIn">
+
+                        <i class="bi bi-linkedin"></i>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/uniagora.shop?igsh=d3dsMXBxcWh4eTlt"
+
+                       target="_blank"
+
+                       class="social-link instagram"
+
+                       aria-label="Instagram">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- ==========================================================
+                            FOOTER
+    =========================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- =======================================
+                        BRAND
+                ======================================== -->
+
+                <div class="col-lg-5">
+
+                    <div class="footer-logo">
+
+                        <img src="assets/images/logo/logo.png"
+                             alt="UniAGORA Logo">
+
+                        <h4>
+
+                            Uni<span>AGORA</span>
+
+                        </h4>
+
+                    </div>
+
+                    <p class="footer-description">
+
+                        UniAGORA is building the future of campus life by bringing together shopping, food delivery, campus riders and student businesses into one trusted platform designed exclusively for university students.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =======================================
+                        QUICK LINKS
+                ======================================== -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <h5 class="footer-title">
+
+                        Quick Links
+
+                    </h5>
+
+                    <div class="footer-links">
+
+                        <a href="#hero">
+
+                            Home
+
+                        </a>
+
+                        <a href="#features">
+
+                            Features
+
+                        </a>
+
+                        <a href="#countdown">
+
+                            Launch Countdown
+
+                        </a>
+
+                        <a href="#community">
+
+                            Community
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =======================================
+                        CONNECT
+                ======================================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <h5 class="footer-title">
+
+                        Connect
+
+                    </h5>
+
+                    <div class="footer-links">
+
+                        <a href="https://whatsapp.com/channel/0029Vb8JuVF7oQhfrO0XoE3n"
+
+                           target="_blank">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            WhatsApp Channel
+
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/uniagorashop/about/?viewAsMember=true"
+
+                           target="_blank">
+
+                            <i class="bi bi-linkedin"></i>
+
+                            LinkedIn
+
+                        </a>
+
+                        <a href="https://www.instagram.com/uniagora.shop?igsh=d3dsMXBxcWh4eTlt"
+
+                           target="_blank">
+
+                            <i class="bi bi-instagram"></i>
+
+                            Instagram
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-divider"></div>
+
+
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 UniAGORA. All Rights Reserved.
+
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+
+                        Privacy Policy
+
+                    </a>
+
+                    <a href="#">
+
+                        Terms of Service
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================================
+                        JAVASCRIPT
+    =========================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+
+        /* ==========================================
+                AOS
+        ========================================== */
+
+        AOS.init({
+
+            duration:800,
+
+            once:true,
+
+            offset:80
+
+        });
+
+
+
+        /* ==========================================
+                NAVBAR SCROLL
+        ========================================== */
+
+        const navbar = document.getElementById("mainNavbar");
+
+        window.addEventListener("scroll", () => {
+
+            if(window.scrollY > 40){
+
+                navbar.classList.add("scrolled");
+
+            }else{
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+
+        /* ==========================================
+                WAITLIST
+        ========================================== */
+
+        function handleWaitlist(event){
+
+            event.preventDefault();
+
+            const email = document.getElementById("waitlistEmail");
+
+            const message = document.getElementById("waitlistMsg");
+
+            if(email.value.trim() !== ""){
+
+                message.style.display = "block";
+
+                email.value = "";
+
+            }
+
+        }
+
+
+
+        /* ==========================================
+                COUNTDOWN
+        ========================================== */
+
+        const launchDate = new Date();
+
+        launchDate.setMonth(launchDate.getMonth() + 8);
+
+        function updateCountdown(){
+
+            const now = new Date().getTime();
+
+            const distance = launchDate.getTime() - now;
+
+            if(distance < 0) return;
+
+            document.getElementById("days").textContent =
+            String(Math.floor(distance / (1000*60*60*24))).padStart(2,"0");
+
+            document.getElementById("hours").textContent =
+            String(Math.floor((distance % (1000*60*60*24))/(1000*60*60))).padStart(2,"0");
+
+            document.getElementById("minutes").textContent =
+            String(Math.floor((distance % (1000*60*60))/(1000*60))).padStart(2,"0");
+
+            document.getElementById("seconds").textContent =
+            String(Math.floor((distance % (1000*60))/1000)).padStart(2,"0");
+
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown,1000);
+
+
+
+        /* ==========================================
+                SMOOTH SCROLL
+        ========================================== */
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+            anchor.addEventListener("click",function(e){
+
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+                    behavior:"smooth"
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
