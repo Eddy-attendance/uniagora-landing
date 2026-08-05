@@ -34,10 +34,14 @@ if DEBUG:
     ALLOWED_HOSTS = [
         "127.0.0.1",
         "localhost",
-        "uniagora-landing.onrender.com"
+    ]
+else:
+    ALLOWED_HOSTS = [
+        "uniagora-landing.onrender.com",
         "uniagora.shop",
         "www.uniagora.shop",
     ]
+
 # ------------------------------------------------------------------------------
 # CSRF
 # ------------------------------------------------------------------------------
