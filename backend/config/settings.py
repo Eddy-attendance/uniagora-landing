@@ -28,7 +28,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "uniagora-landing.onrender.com",
+]
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
 ]
@@ -141,6 +143,7 @@ STATICFILES_STORAGE = (
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
+    "https://6a7037856288676e3d4a8389--spontaneous-caramel-b562fa.netlify.app/"
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
