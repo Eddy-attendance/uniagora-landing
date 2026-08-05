@@ -30,17 +30,13 @@ DEBUG = env.bool("DEBUG", default=False)
 # Hosts
 # ------------------------------------------------------------------------------
 
-if DEBUG:
-    ALLOWED_HOSTS = [
-        "127.0.0.1",
-        "localhost",
-    ]
-else:
-    ALLOWED_HOSTS = [
-        "uniagora-landing.onrender.com",
-        "uniagora.shop",
-        "www.uniagora.shop",
-    ]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "uniagora-landing.onrender.com",
+    "uniagora.shop",
+    "www.uniagora.shop",
+]
 
 # ------------------------------------------------------------------------------
 # CSRF
