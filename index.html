@@ -4296,22 +4296,83 @@
                 WAITLIST
         ========================================== */
 
-        function handleWaitlist(event){
-
+        async function handleWaitlist(event) {
             event.preventDefault();
 
-            const email = document.getElementById("waitlistEmail");
+            const emailInput = document.getElementById("waitlistEmail");
+            const button = event.target.querySelector("button");
+            const msg = document.getElementById("waitlistMsg");
 
-            const message = document.getElementById("waitlistMsg");
+            const email = emailInput.value.trim();
 
-            if(email.value.trim() !== ""){
+            if (!email) return;
 
-                message.style.display = "block";
+            button.disabled = true;
+            button.textContent = "Joining...";
+            msg.style.display = "none";
 
-                email.value = "";
+            try {
+
+                const response = await fetch("http://127.0.0.1:8000/api/v1/waitlist/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+
+                    msg.className = "small text-success fw-semibold mb-3";
+
+                    msg.innerHTML = `
+                        <i class="bi bi-check-circle-fill"></i>
+                        ${data.message}
+                    `;
+
+                    msg.style.display = "block";
+
+                    emailInput.value = "";
+
+                } else {
+
+                    let error = "Something went wrong.";
+
+                    if (data.errors?.email) {
+                        error = data.errors.email[0];
+                    }
+
+                    msg.className = "small text-danger fw-semibold mb-3";
+
+                    msg.innerHTML = `
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        ${error}
+                    `;
+
+                    msg.style.display = "block";
+                }
+
+            } catch (err) {
+
+                msg.className = "small text-danger fw-semibold mb-3";
+
+                msg.innerHTML = `
+                    <i class="bi bi-wifi-off"></i>
+                    Unable to connect to the server.
+                `;
+
+                msg.style.display = "block";
+
+            } finally {
+
+                button.disabled = false;
+                button.textContent = "Join Waitlist";
 
             }
-
         }
 
 
