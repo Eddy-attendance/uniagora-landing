@@ -6,13 +6,13 @@ from .models import Waitlist
 class WaitlistAdmin(admin.ModelAdmin):
     list_display = (
         "email",
-        "joined_at",
-        "is_verified",
+        "created_at",
     )
 
-    search_fields = ("email",)
+    search_fields = (
+        "email",
+    )
 
-    list_filter = (
-        "is_verified",
-        "joined_at",
+    ordering = (
+        "-created_at",
     )
