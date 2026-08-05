@@ -175,9 +175,6 @@ if DEBUG:
     CORS_ALLOWED_ORIGINS = [
         "http://127.0.0.1:5500",
         "http://localhost:5500",
-    ]
-else:
-    CORS_ALLOWED_ORIGINS = [
         "https://6a7037856288676e3d4a8389--spontaneous-caramel-b562fa.netlify.app",
         "https://uniagora.shop",
         "https://www.uniagora.shop",
