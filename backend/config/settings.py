@@ -204,3 +204,11 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 # ------------------------------------------------------------------------------
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ------------------------------------------------------------------------------
+# Default Admin
+# ------------------------------------------------------------------------------
+
+ADMIN_USERNAME = env("ADMIN_USERNAME", default="operator")
+ADMIN_EMAIL = env("ADMIN_EMAIL", default="operator@uniagora.com")
+ADMIN_PASSWORD = env("ADMIN_PASSWORD", default="ChangeMe123!")
