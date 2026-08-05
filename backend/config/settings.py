@@ -175,10 +175,18 @@ if DEBUG:
     CORS_ALLOWED_ORIGINS = [
         "http://127.0.0.1:5500",
         "http://localhost:5500",
-        "https://6a7037856288676e3d4a8389--spontaneous-caramel-b562fa.netlify.app",
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "https://spontaneous-caramel-b562fa.netlify.app",
         "https://uniagora.shop",
         "https://www.uniagora.shop",
     ]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.netlify\.app$",
+    r"^https://.*\.onrender\.com$",
+]
 
 # ------------------------------------------------------------------------------
 # Email
