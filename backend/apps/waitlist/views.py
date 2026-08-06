@@ -11,24 +11,17 @@ class WaitlistView(APIView):
     permission_classes = []
 
     def post(self, request):
-        print("=" * 50)
-        print("REQUEST:", request.data)
-
         serializer = WaitlistSerializer(data=request.data)
-
-        print("VALID:", serializer.is_valid())
-        print("ERRORS:", serializer.errors)
 
         if serializer.is_valid():
 
             waitlist = serializer.save()
-            print("SAVED:", waitlist.email)
 
+            # Send welcome email
             try:
                 send_welcome_email(waitlist.email)
-                print("EMAIL SENT")
             except Exception as e:
-                print("EMAIL ERROR:", e)
+                print(f"Email Error: {e}")
 
             return Response(
                 {
