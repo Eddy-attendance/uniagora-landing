@@ -38,4 +38,14 @@ def send_welcome_email(email: str):
         "text/html",
     )
 
-    message.send()
+    try:
+        sent = message.send(fail_silently=False)
+        print(f"✅ Email sent successfully. Returned: {sent}")
+
+    except Exception as e:
+        print("=" * 60)
+        print("EMAIL ERROR")
+        print(f"Type: {type(e).__name__}")
+        print(f"Message: {e}")
+        print("=" * 60)
+        raise
