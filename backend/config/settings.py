@@ -203,6 +203,7 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
 
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
+BREVO_API_KEY = env("BREVO_API_KEY")
 
 # ------------------------------------------------------------------------------
 # Default Primary Key

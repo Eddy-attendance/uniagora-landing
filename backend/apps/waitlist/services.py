@@ -1,11 +1,15 @@
+import requests
+
 from django.conf import settings
-from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+
+
+BREVO_API_URL = "https://api.brevo.com/v3/smtp/email"
 
 
 def send_welcome_email(email: str):
     """
-    Sends the UniAGORA welcome email to a new waitlist subscriber.
+    Sends the UniAGORA welcome email using Brevo's Transactional Email API.
     """
 
     subject = "🎉 Welcome to the UniAGORA Waitlist!"
@@ -26,26 +30,36 @@ def send_welcome_email(email: str):
         context,
     )
 
-    message = EmailMultiAlternatives(
-        subject=subject,
-        body=text_content,
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[email],
+    payload = {
+        "sender": {
+            "name": "UniAGORA",
+            "email": "eddyolly23@gmail.com",
+        },
+        "to": [
+            {
+                "email": email,
+            }
+        ],
+        "subject": subject,
+        "textContent": text_content,
+        "htmlContent": html_content,
+    }
+
+    headers = {
+        "accept": "application/json",
+        "api-key": settings.BREVO_API_KEY,
+        "content-type": "application/json",
+    }
+
+    response = requests.post(
+        BREVO_API_URL,
+        json=payload,
+        headers=headers,
+        timeout=15,
     )
 
-    message.attach_alternative(
-        html_content,
-        "text/html",
-    )
+    response.raise_for_status()
 
-    try:
-        sent = message.send(fail_silently=False)
-        print(f"✅ Email sent successfully. Returned: {sent}")
+    print(f"✅ Brevo email sent to {email}")
 
-    except Exception as e:
-        print("=" * 60)
-        print("EMAIL ERROR")
-        print(f"Type: {type(e).__name__}")
-        print(f"Message: {e}")
-        print("=" * 60)
-        raise
+    return response.json()

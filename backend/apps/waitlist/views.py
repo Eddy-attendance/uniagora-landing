@@ -17,7 +17,6 @@ class WaitlistView(APIView):
 
             waitlist = serializer.save()
 
-            # DON'T catch the exception
             send_welcome_email(waitlist.email)
 
             return Response(
