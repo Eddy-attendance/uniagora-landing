@@ -171,21 +171,10 @@ STATICFILES_STORAGE = (
 # CORS
 # ------------------------------------------------------------------------------
 
-if DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        "http://127.0.0.1:5500",
-        "http://localhost:5500",
-    ]
-else:
-    CORS_ALLOWED_ORIGINS = [
-        "https://spontaneous-caramel-b562fa.netlify.app",
-        "https://uniagora.shop",
-        "https://www.uniagora.shop",
-    ]
-
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://.*\.netlify\.app$",
-    r"^https://.*\.onrender\.com$",
+CORS_ALLOWED_ORIGINS = [
+    "https://spontaneous-caramel-b562fa.netlify.app",
+    "https://uniagora.shop",
+    "https://www.uniagora.shop",
 ]
 
 # ------------------------------------------------------------------------------
